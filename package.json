@@ -1,0 +1,15 @@
+{
+  "name": "dp-google-sheers-auto-price",
+  "version": "0.1.0",
+  "license": "GPL-3.0",
+  "scripts": {
+    "login": "clasp login",
+    "watch": "clasp push --watch",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
+  },
+  "devDependencies": {
+    "@google/clasp": "^2.4.2",
+    "@types/google-apps-script": "^1.0.76",
+    "prettier": "^3.0.3"
+  }
+}

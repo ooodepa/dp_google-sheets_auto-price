@@ -1,0 +1,8 @@
+1.0.0 (2023.11.01)
+
+- added automatic convert ts to js and upload to Google Apps Script with clasp
+- added prettier
+- added fetch brands
+- added fetch categories
+- added fetch items
+- added status bar function

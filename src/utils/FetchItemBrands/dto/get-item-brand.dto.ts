@@ -1,0 +1,1 @@
+interface GetItemBrandDto extends ItemBrandWithIdDto {}
