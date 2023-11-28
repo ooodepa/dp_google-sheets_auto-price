@@ -1,3 +1,10 @@
+2.0.0 (2023.11.29)
+
+- added functions: getWholesaleCost, getRetailCost
+- added function that get date in string in format "YYYY-MM-DD hh:mm"
+- added function that get env object from file "env.html"
+- added currency GEL, AMD
+
 1.0.0 (2023.11.01)
 
 - added automatic convert ts to js and upload to Google Apps Script with clasp

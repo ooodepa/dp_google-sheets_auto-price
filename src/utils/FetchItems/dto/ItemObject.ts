@@ -15,16 +15,28 @@ class ItemObject {
     return ItemObject.getCharacteristicById(19, item);
   }
 
-  static getCostBYN(item: ItemDto) {
+  static getWholesaleCostBYN(item: ItemDto) {
     return ItemObject.getCharacteristicById(25, item);
   }
 
-  static getCostUSD(item: ItemDto) {
+  static getWholesaleCostUSD(item: ItemDto) {
     return ItemObject.getCharacteristicById(24, item);
   }
 
-  static getCostRUB(item: ItemDto) {
+  static getWholesaleCostRUB(item: ItemDto) {
     return ItemObject.getCharacteristicById(29, item);
+  }
+
+  static getRetailCostBYN(item: ItemDto) {
+    return ItemObject.getCharacteristicById(35, item);
+  }
+
+  static getRetailCostUSD(item: ItemDto) {
+    return ItemObject.getCharacteristicById(37, item);
+  }
+
+  static getRetailCostRUB(item: ItemDto) {
+    return ItemObject.getCharacteristicById(36, item);
   }
 
   static getCharacteristicById(characteristicId: number, item: ItemDto) {
