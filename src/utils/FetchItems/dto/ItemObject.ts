@@ -39,6 +39,22 @@ class ItemObject {
     return ItemObject.getCharacteristicById(36, item);
   }
 
+  static getKg(item: ItemDto) {
+    return ItemObject.getCharacteristicById(2, item);
+  }
+
+  static getV(item: ItemDto) {
+    return ItemObject.getCharacteristicById(3, item);
+  }
+
+  static getDiametr(item: ItemDto) {
+    return ItemObject.getCharacteristicById(4, item);
+  }
+
+  static getWarranty(item: ItemDto) {
+    return ItemObject.getCharacteristicById(48, item);
+  }
+
   static getCharacteristicById(characteristicId: number, item: ItemDto) {
     const characteristics = item.dp_itemCharacteristics;
     for (let i = 0; i < characteristics.length; ++i) {

@@ -1,3 +1,11 @@
+3.0.0 (2023.12.07)
+
+- added characteristics:
+    - KG (kg)
+    - CBM (m3)
+    - diametr (inch)
+    - warranty (year)
+
 2.0.0 (2023.11.29)
 
 - added functions: getWholesaleCost, getRetailCost

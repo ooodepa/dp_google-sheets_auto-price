@@ -32,11 +32,11 @@ function myFunction() {
     AMD: `Прайс от ${date} в армянских драмах (AMD) (с доставкой и НДС по Армении)\n${otherContacts}`,
   };
 
-  price_BYN_xlsx_array.push([titles['BYN'], '', '', '', '', '']);
-  price_USD_xlsx_array.push([titles['USD'], '', '', '', '', '']);
-  price_RUB_xlsx_array.push([titles['RUB'], '', '', '', '', '']);
-  price_GEL_xlsx_array.push([titles['GEL'], '', '', '', '', '']);
-  price_AMD_xlsx_array.push([titles['AMD'], '', '', '', '', '']);
+  price_BYN_xlsx_array.push([titles['BYN'], '', '', '', '', '', '', '', '', '']);
+  price_USD_xlsx_array.push([titles['USD'], '', '', '', '', '', '', '', '', '']);
+  price_RUB_xlsx_array.push([titles['RUB'], '', '', '', '', '', '', '', '', '']);
+  price_GEL_xlsx_array.push([titles['GEL'], '', '', '', '', '', '', '', '', '']);
+  price_AMD_xlsx_array.push([titles['AMD'], '', '', '', '', '', '', '', '', '']);
 
   price_BYN_xlsx_array.push([
     'Картинка',
@@ -45,6 +45,10 @@ function myFunction() {
     'Розничная цена\n1 единицы\n с НДС\n в Беларуси\n с доставкой\nв белорусских\nрублях (BYN)',
     'Оптовая цена\n1 eдиницы\n с НДС\n в Беларуси\n с доставкой\nв белорусских\nрублях (BYN)',
     'Наименование',
+    'Вес\nоптовой\nкоробки',
+    'Объем\nоптовой\nкоробки',
+    'Диаметр\n(трубы)\nподводки\nводы',
+    'Гарантия',
   ]);
   price_USD_xlsx_array.push([
     'Картинка',
@@ -53,6 +57,10 @@ function myFunction() {
     'Розничная цена\n1 единицы\n с НДС\n в Стамбуле\nв долларах\nСША (USD)',
     'Оптовая цена\n1 eдиницы\n с НДС\n в Стамбуле\nв долларах\nСША (USD)',
     'Наименование',
+    'Вес\nоптовой\nкоробки',
+    'Объем\nоптовой\nкоробки',
+    'Диаметр\n(трубы)\nподводки\nводы',
+    'Гарантия',
   ]);
   price_RUB_xlsx_array.push([
     'Картинка',
@@ -61,6 +69,10 @@ function myFunction() {
     'Розничная цена\n1 единицы\n с НДС\n в России\n с доставкой\nв российских\nрублях (RUB)',
     'Оптовая цена\n1 eдиницы\n с НДС\n в России\n с доставкой\nв российских\nрублях (RUB)',
     'Наименование',
+    'Вес\nоптовой\nкоробки',
+    'Объем\nоптовой\nкоробки',
+    'Диаметр\n(трубы)\nподводки\nводы',
+    'Гарантия',
   ]);
   price_GEL_xlsx_array.push([
     'Картинка',
@@ -69,6 +81,10 @@ function myFunction() {
     'Розничная цена\n1 единицы\n с НДС\n в Грузии\n с доставкой\nв грузинских\nлари (GEL)',
     'Оптовая цена\n1 eдиницы\n с НДС\n в Грузии\n с доставкой\nв грузинских\nлари (GEL)',
     'Наименование',
+    'Вес\nоптовой\nкоробки',
+    'Объем\nоптовой\nкоробки',
+    'Диаметр\n(трубы)\nподводки\nводы',
+    'Гарантия',
   ]);
   price_AMD_xlsx_array.push([
     'Картинка',
@@ -77,6 +93,10 @@ function myFunction() {
     'Розничная цена\n1 единицы\n с НДС\n в Армении\n с доставкой\nв армянянских\nдрам (AMD)',
     'Оптовая цена\n1 eдиницы\n с НДС\n в Армении\n с доставкой\nв армянянских\nдрам (AMD)',
     'Наименование',
+    'Вес\nоптовой\nкоробки',
+    'Объем\nоптовой\nкоробки',
+    'Диаметр\n(трубы)\nподводки\nводы',
+    'Гарантия',
   ]);
 
   const brands = FetchItemBrands.get();
@@ -95,11 +115,11 @@ function myFunction() {
     brands.forEach(currentBrand => {
       if (currentEnvBrand === currentBrand.dp_urlSegment) {
         const level1 = `~ ~ ~ ~ ~ ~ ~ ~ ${currentBrand.dp_name} ~ ~ ~ ~ ~ ~ ~ ~ ~`;
-        price_BYN_xlsx_array.push([level1, '', '', '', '', '']);
-        price_USD_xlsx_array.push([level1, '', '', '', '', '']);
-        price_RUB_xlsx_array.push([level1, '', '', '', '', '']);
-        price_GEL_xlsx_array.push([level1, '', '', '', '', '']);
-        price_AMD_xlsx_array.push([level1, '', '', '', '', '']);
+        price_BYN_xlsx_array.push([level1, '', '', '', '', '', '', '', '', '']);
+        price_USD_xlsx_array.push([level1, '', '', '', '', '', '', '', '', '']);
+        price_RUB_xlsx_array.push([level1, '', '', '', '', '', '', '', '', '']);
+        price_GEL_xlsx_array.push([level1, '', '', '', '', '', '', '', '', '']);
+        price_AMD_xlsx_array.push([level1, '', '', '', '', '', '', '', '', '']);
 
         rowId += 1;
         itemBrandRowIds.push(rowId);
@@ -107,17 +127,17 @@ function myFunction() {
         categories.forEach(currentCategory => {
           if (currentBrand.dp_id === currentCategory.dp_itemBrandId) {
             const level2 = `~ ~ ~ ${currentCategory.dp_name} ~ ~ ~`;
-            price_BYN_xlsx_array.push([level2, '', '', '', '', '']);
-            price_USD_xlsx_array.push([level2, '', '', '', '', '']);
-            price_RUB_xlsx_array.push([level2, '', '', '', '', '']);
-            price_GEL_xlsx_array.push([level2, '', '', '', '', '']);
-            price_AMD_xlsx_array.push([level2, '', '', '', '', '']);
+            price_BYN_xlsx_array.push([level2, '', '', '', '', '', '', '', '', '']);
+            price_USD_xlsx_array.push([level2, '', '', '', '', '', '', '', '', '']);
+            price_RUB_xlsx_array.push([level2, '', '', '', '', '', '', '', '', '']);
+            price_GEL_xlsx_array.push([level2, '', '', '', '', '', '', '', '', '']);
+            price_AMD_xlsx_array.push([level2, '', '', '', '', '', '', '', '', '']);
 
             rowId += 1;
             itemCategoryRowIds.push(rowId);
 
             items.forEach(currentItem => {
-              if (currentCategory.dp_id === currentItem.dp_itemCategoryId) {
+              if (currentCategory.dp_id === currentItem.dp_itemCategoryId && !currentItem.dp_isHidden) {
                 const img =
                   currentItem.dp_photoUrl.length === 0
                     ? 'нет\nкартинки'
@@ -183,6 +203,11 @@ function myFunction() {
                 name = name.trim();
                 // > > > end name
 
+                const kg = ItemObject.getKg(currentItem);
+                const V = ItemObject.getV(currentItem);
+                const diametr = ItemObject.getDiametr(currentItem);
+                const warranty = ItemObject.getWarranty(currentItem);
+
                 price_BYN_xlsx_array.push([
                   img,
                   model,
@@ -192,6 +217,10 @@ function myFunction() {
                     ? wholesaleСostostBYN
                     : 'уточняйте',
                   name,
+                  kg,
+                  V,
+                  diametr,
+                  warranty,
                 ]);
                 price_USD_xlsx_array.push([
                   img,
@@ -200,6 +229,10 @@ function myFunction() {
                   retailСostUSD.length > 0 ? retailСostUSD : 'уточняйте',
                   wholesaleСostUSD.length > 0 ? wholesaleСostUSD : 'уточняйте',
                   name,
+                  kg,
+                  V,
+                  diametr,
+                  warranty,
                 ]);
                 price_RUB_xlsx_array.push([
                   img,
@@ -208,6 +241,10 @@ function myFunction() {
                   retailСostRUB.length > 0 ? retailСostRUB : 'уточняйте',
                   wholesaleСostRUB.length > 0 ? wholesaleСostRUB : 'уточняйте',
                   name,
+                  kg,
+                  V,
+                  diametr,
+                  warranty,
                 ]);
                 price_GEL_xlsx_array.push([
                   img,
@@ -216,6 +253,10 @@ function myFunction() {
                   'скоро',
                   'скоро',
                   name,
+                  kg,
+                  V,
+                  diametr,
+                  warranty,
                 ]);
                 price_AMD_xlsx_array.push([
                   img,
@@ -224,6 +265,10 @@ function myFunction() {
                   'скоро',
                   'скоро',
                   name,
+                  kg,
+                  V,
+                  diametr,
+                  warranty,
                 ]);
 
                 rowId += 1;
@@ -279,19 +324,19 @@ function myFunction() {
   Logger.log('set borders');
 
   const allTableRangeBYN = listBYN.getRange(
-    `A1:F${price_BYN_xlsx_array.length}`,
+    `A1:J${price_BYN_xlsx_array.length}`,
   );
   const allTableRangeUSD = listUSD.getRange(
-    `A1:F${price_USD_xlsx_array.length}`,
+    `A1:J${price_USD_xlsx_array.length}`,
   );
   const allTableRangeRUB = listRUB.getRange(
-    `A1:F${price_RUB_xlsx_array.length}`,
+    `A1:J${price_RUB_xlsx_array.length}`,
   );
   const allTableRangeGEL = listGEL.getRange(
-    `A1:F${price_GEL_xlsx_array.length}`,
+    `A1:J${price_GEL_xlsx_array.length}`,
   );
   const allTableRangeAMD = listAMD.getRange(
-    `A1:F${price_AMD_xlsx_array.length}`,
+    `A1:J${price_AMD_xlsx_array.length}`,
   );
 
   // Аргументы setBorder(): (top, left, bottom, right, vertical, horizontal, color)
@@ -312,10 +357,14 @@ function myFunction() {
   [listBYN, listUSD, listRUB, listGEL, listAMD].forEach(list => {
     list.setColumnWidth(1, 100);
     list.setColumnWidth(2, 120);
-    list.setColumnWidth(3, 100);
+    list.setColumnWidth(3, 80);
     list.setColumnWidth(4, 100);
     list.setColumnWidth(5, 100);
     list.setColumnWidth(6, 700);
+    list.setColumnWidth(7, 60);
+    list.setColumnWidth(8, 60);
+    list.setColumnWidth(9, 60);
+    list.setColumnWidth(10, 60);
   });
   // > > > end set col width
 
@@ -324,11 +373,11 @@ function myFunction() {
   for (let i = 0; i < itemBrandRowIds.length; ++i) {
     const rowNumber = itemBrandRowIds[i];
 
-    const rangeBYN = listBYN.getRange(`A${rowNumber}:F${rowNumber}`);
-    const rangeUSD = listUSD.getRange(`A${rowNumber}:F${rowNumber}`);
-    const rangeRUB = listRUB.getRange(`A${rowNumber}:F${rowNumber}`);
-    const rangeGEL = listGEL.getRange(`A${rowNumber}:F${rowNumber}`);
-    const rangeAMD = listAMD.getRange(`A${rowNumber}:F${rowNumber}`);
+    const rangeBYN = listBYN.getRange(`A${rowNumber}:J${rowNumber}`);
+    const rangeUSD = listUSD.getRange(`A${rowNumber}:J${rowNumber}`);
+    const rangeRUB = listRUB.getRange(`A${rowNumber}:J${rowNumber}`);
+    const rangeGEL = listGEL.getRange(`A${rowNumber}:J${rowNumber}`);
+    const rangeAMD = listAMD.getRange(`A${rowNumber}:J${rowNumber}`);
 
     // Установка высоты строки
     const rowHeight = 20;
@@ -360,11 +409,11 @@ function myFunction() {
   for (let i = 0; i < itemCategoryRowIds.length; ++i) {
     const rowNumber = itemCategoryRowIds[i];
 
-    const rangeBYN = listBYN.getRange(`A${rowNumber}:F${rowNumber}`);
-    const rangeUSD = listUSD.getRange(`A${rowNumber}:F${rowNumber}`);
-    const rangeRUB = listRUB.getRange(`A${rowNumber}:F${rowNumber}`);
-    const rangeGEL = listGEL.getRange(`A${rowNumber}:F${rowNumber}`);
-    const rangeAMD = listAMD.getRange(`A${rowNumber}:F${rowNumber}`);
+    const rangeBYN = listBYN.getRange(`A${rowNumber}:J${rowNumber}`);
+    const rangeUSD = listUSD.getRange(`A${rowNumber}:J${rowNumber}`);
+    const rangeRUB = listRUB.getRange(`A${rowNumber}:J${rowNumber}`);
+    const rangeGEL = listGEL.getRange(`A${rowNumber}:J${rowNumber}`);
+    const rangeAMD = listAMD.getRange(`A${rowNumber}:J${rowNumber}`);
 
     // Установка высоты строки
     const rowHeight = 20;
@@ -499,21 +548,39 @@ function myFunction() {
       range.setVerticalAlignment('middle');
       range.setWrap(true);
     });
+
+     // Установка выравнивания для столбца "... цена ..."
+    const rangeCharacteristicsBYN = listBYN.getRange(`G${rowNumber}:J${rowNumber}`);
+    const rangeCharacteristicsUSD = listUSD.getRange(`G${rowNumber}:J${rowNumber}`);
+    const rangeCharacteristicsRUB = listRUB.getRange(`G${rowNumber}:J${rowNumber}`);
+    const rangeCharacteristicsGEL = listGEL.getRange(`G${rowNumber}:J${rowNumber}`);
+    const rangeCharacteristicsAMD = listAMD.getRange(`G${rowNumber}:J${rowNumber}`);
+
+    [
+      rangeCharacteristicsBYN,
+      rangeCharacteristicsUSD,
+      rangeCharacteristicsRUB,
+      rangeCharacteristicsGEL,
+      rangeCharacteristicsAMD,
+    ].forEach(range => {
+      range.setHorizontalAlignment('right');
+      range.setVerticalAlignment('middle');
+    });
   }
   // > > > end items styles
 
   // < < < head styles
-  const rangeH1BYN = listBYN.getRange('A1:F1');
-  const rangeH1USD = listUSD.getRange('A1:F1');
-  const rangeH1RUB = listRUB.getRange('A1:F1');
-  const rangeH1GEL = listGEL.getRange('A1:F1');
-  const rangeH1AMD = listAMD.getRange('A1:F1');
+  const rangeH1BYN = listBYN.getRange('A1:J1');
+  const rangeH1USD = listUSD.getRange('A1:J1');
+  const rangeH1RUB = listRUB.getRange('A1:J1');
+  const rangeH1GEL = listGEL.getRange('A1:J1');
+  const rangeH1AMD = listAMD.getRange('A1:J1');
 
-  const rangeH2BYN = listBYN.getRange('A2:F2');
-  const rangeH2USD = listUSD.getRange('A2:F2');
-  const rangeH2RUB = listRUB.getRange('A2:F2');
-  const rangeH2GEL = listGEL.getRange('A2:F2');
-  const rangeH2AMD = listAMD.getRange('A2:F2');
+  const rangeH2BYN = listBYN.getRange('A2:J2');
+  const rangeH2USD = listUSD.getRange('A2:J2');
+  const rangeH2RUB = listRUB.getRange('A2:J2');
+  const rangeH2GEL = listGEL.getRange('A2:J2');
+  const rangeH2AMD = listAMD.getRange('A2:J2');
 
   // Выравнивание по центру
   Logger.log('Head style: set aligment');
@@ -562,7 +629,7 @@ function myFunction() {
   // < < < delete null column
   [listBYN, listUSD, listRUB, listGEL, listAMD].forEach(list => {
     try {
-      list.deleteColumns(7, 21);
+      list.deleteColumns(11, 21);
     } catch (exception) {
       Logger.log('Not all colums deleted (colF to colZ)');
     }
